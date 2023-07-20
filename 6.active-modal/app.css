@@ -51,6 +51,16 @@ body {
     font-size: 16px;
     line-height: 1;
 }
+.button {
+    display: block;
+    margin: 15px auto;
+    width: 150px;
+    border: 0px;
+    background-color: #07a787;
+    color: rgba(255, 255, 255, 0.945);
+    padding: 15px;
+    border-radius: 10px;
+}
 .menu {
     width: 300px;
     position: fixed;
