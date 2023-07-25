@@ -10,7 +10,7 @@ window.addEventListener("load", function () {
         const cords = e.target.getBoundingClientRect();
         const divHeight = div.offsetHeight;
         const triangleHeight = 20;
-        const { width, height, top, right, left } = cords;
+        const { width, top, left } = cords;
         div.style.left = `${left - width / 2}px`;
         div.style.top = `${top - triangleHeight - divHeight}px`;
     }
