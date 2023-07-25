@@ -60,7 +60,12 @@
 //     console.log(event.target.style); // return an css style object
 //     event.target.style.color = "blue";
 // }
+
 // --------------- Custom attribute ---------------
+
+// --------------- load and DOMContentLoaded ---------------
+document.addEventListener("DOMContentLoaded"); // run after dom has loaded
+window.addEventListener("load"); // run when logo is done load(fully loaded)
 
 // --------------- Event: Mouse move ---------------
 
