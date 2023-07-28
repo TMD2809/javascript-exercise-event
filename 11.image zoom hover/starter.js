@@ -4,19 +4,23 @@ const imageWrapper = document.querySelector(".image-wrapper");
 coverImage.addEventListener("mousemove", hoverEnable);
 const imageWrapperLeft = imageWrapper.offsetLeft;
 const imageWrapperTop = imageWrapper.offsetTop;
-console.log(imageWrapperLeft, imageWrapperTop);
 function hoverEnable(e) {
     const pX = e.pageX;
     const pY = e.pageY;
-    image.style = "width:auto; max-height:unset;";
-    const ratio = imageWrapper.offsetWidth / image.offsetWidth;
-    const x = pX * ratio;
-    const y = pY * ratio;
+    const spaceX = (image.offsetWidth / 2 - imageWrapper.offsetWidth) * 2;
+    const spaceY = (image.offsetHeight / 2 - imageWrapper.offsetHeight) * 2;
+    const imageWidth = image.offsetWidth + spaceX;
+    const imageHeight = image.offsetHeight + spaceY;
+    const ratioX = imageWidth / imageWrapper.offsetWidth / 2;
+    const ratioY = imageHeight / imageWrapper.offsetHeight / 2;
+    const x = pX;
+    const y = pY;
     image.style = `
-    left: ${-x + imageWrapperLeft}px;
-    top: ${-y}px;
+    left: ${(-x + imageWrapperLeft) * ratioX}px;
+    top: ${(-y + imageWrapperTop) * ratioY}px;
     width:auto;
-    max-height:unset;`;
+    max-height:unset;
+    transform:none;`;
 }
 coverImage.addEventListener("mouseleave", hoverDisable);
 function hoverDisable(e) {
