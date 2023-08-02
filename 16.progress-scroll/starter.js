@@ -26,14 +26,14 @@ window.addEventListener(
             document.body.style.paddingTop = 0;
             header && header.classList.remove("is-fixed");
         }
-    }, 90)
+    }, 50)
 );
 const progress = document.querySelector(".progress");
 window.addEventListener("scroll", scrollProgress);
 function scrollProgress(e) {
     const scrollY = window.pageYOffset;
-    const scrollX = window.pageXOffset;
-    console.log("🚀 ~ scrollProgress ~ scrollY:", scrollY);
-    progress.style.width = `${(scrollY / 1988) * 100 * scrollX}`;
-    // console.log(`progress Width:`progress.offsetWidth);
+    const scrollBarHeight =
+        document.documentElement.scrollHeight -
+        document.documentElement.clientHeight;
+    progress.style.width = `${(scrollY / scrollBarHeight) * 100}%`;
 }
