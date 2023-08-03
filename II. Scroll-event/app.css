@@ -1,0 +1,22 @@
+body {
+    background-color: rgb(32, 33, 36);
+    height: 500vh;
+}
+.boxed {
+    margin: 0 auto;
+    margin-top: 30px;
+    border-radius: 10px;
+    height: 200px;
+    width: 200px;
+    background-color: orange;
+    overflow: auto;
+}
+.boxed-content {
+    height: 600px;
+    width: 600px;
+}
+.button {
+    display: block;
+    margin: 0 auto;
+    margin-top: 30px;
+}
