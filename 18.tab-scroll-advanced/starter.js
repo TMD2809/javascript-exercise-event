@@ -9,30 +9,41 @@ tabItems.forEach((i) => i.addEventListener("click", handleClick));
 function handleClick(e) {
     tabItems.forEach((i) => i.classList.remove("active"));
     e.target.classList.add("active");
-    let spaceScroll =
-        e.target.offsetLeft >= tabListPosition
-            ? e.target.offsetLeft - tabListPosition
-            : e.target.offsetLeft;
-    tabList.scroll(spaceScroll / 2, 0);
+    const spaceScroll = e.target.offsetLeft;
+    tabList.scroll(spaceScroll / 1.15, 0);
+    if (e.target.textContent === tabItems[tabItems.length - 1].textContent) {
+        nextButton.classList.add("disabled");
+        prevButton.classList.remove("disabled");
+    } else if (e.target.textContent === tabItems[0].textContent) {
+        nextButton.classList.remove("disabled");
+        prevButton.classList.add("disabled");
+    } else {
+        nextButton.classList.remove("disabled");
+        prevButton.classList.remove("disabled");
+    }
 }
 tabList.addEventListener("wheel", function (e) {
     const delta = e.deltaY;
     this.scrollLeft += delta;
-    prevButton.classList.remove("disabled");
     if (this.scrollLeft > 0) {
+        prevButton.classList.remove("disabled");
+        console.log(1);
+    } else {
         nextButton.classList.remove("disabled");
+        console.log(2);
     }
-    if (tabList.scrollLeft >= scrollBar) {
+    if (this.scrollLeft >= scrollBar) {
         nextButton.classList.add("disabled");
-    } else if (tabList.scrollLeft <= 0) {
+        console.log(3);
+    } else if (this.scrollLeft <= 0) {
         prevButton.classList.add("disabled");
+        console.log(4);
     }
 });
 prevButton.addEventListener("click", scrollPrev);
 function scrollPrev(e) {
     nextButton.classList.remove("disabled");
     tabList.scrollLeft -= delta;
-    console.log(tabList.scrollLeft);
     if (tabList.scrollLeft <= 0) {
         prevButton.classList.add("disabled");
     }
@@ -41,7 +52,6 @@ nextButton.addEventListener("click", scrollNext);
 function scrollNext(e) {
     prevButton.classList.remove("disabled");
     tabList.scrollLeft += delta;
-    console.log(tabList.scrollLeft);
     if (tabList.scrollLeft >= scrollBar) {
         nextButton.classList.add("disabled");
     }
