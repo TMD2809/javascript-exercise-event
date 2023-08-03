@@ -57,3 +57,10 @@ boxed.addEventListener("scroll", function () {
 
 // // scrollIntoView(): scroll into area where able to observe the selected element
 boxed.scrollIntoView();
+
+// wheel event
+// //scroll tab
+// tabList.addEventListener("wheel", function (e) {
+//     const delta = e.deltaY; // deltaY is a value has positive and negative value, positive when scroll up-negative when scroll down
+//     this.scrollLeft += delta;
+// });
