@@ -2,10 +2,10 @@
 localStorage.setItem("cursed technique", "domain expanse");
 // localStorage.getItem("key")
 console.log(localStorage.getItem("cursed technique"));
-// localStorage.removeItem("key")
-localStorage.removeItem("cursed technique");
-// localStorage.clear(): remove all key
-localStorage.clear();
+// // localStorage.removeItem("key")
+// localStorage.removeItem("cursed technique");
+// // localStorage.clear(): remove all key
+// localStorage.clear();
 // add and query array in local storage
 let arr = [1, 2, 3, 4, 5];
 // using JSON.stringify to add arry into local storage
