@@ -1,7 +1,7 @@
 const todoList = document.querySelector(".todo-list");
 // query data from local storage
-let todoArr =
-    localStorage.length > 0 ? JSON.parse(localStorage.getItem("todoList")) : [];
+let todoArr = JSON.parse(localStorage.getItem("todoList")) || [];
+// localStorage.length > 0 ? JSON.parse(localStorage.getItem("todoList")) : [];
 const todoForm = document.querySelector(".todo-form");
 if (Array.isArray(todoArr) && todoArr.length > 0) {
     todoArr.forEach((i) => addTemplate(i));
@@ -22,6 +22,7 @@ function submitItem(e) {
     addTemplate(todoContent);
     todoArr.push(todoContent);
     localStorage && localStorage.setItem("todoList", JSON.stringify(todoArr));
+    // save to localStorage
     this.elements["todo"].value = "";
 }
 // remove todo item
