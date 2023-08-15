@@ -24,11 +24,21 @@ window.addEventListener("load", function () {
             sliderDotItem[(positionX * -1) / 1000].classList.add("active");
         } else if (direction === -1) {
             if (positionX >= 0) return;
-            console.log("working");
             positionX = positionX + sliderItemWidth;
             sliderMain.style = `transform: translateX(${positionX}px)`;
-            console.log("🚀 ~ handleNextImg ~ positionX:", positionX);
+            sliderDotItem.forEach((i) => i.classList.remove("active"));
             sliderDotItem[(positionX * -1) / 1000].classList.add("active");
         }
     }
+    sliderDotItem.forEach((i) => {
+        i.addEventListener("click", sliderDot);
+        function sliderDot(e) {
+            const dataIndex = e.target.dataset.index;
+            sliderMain.style = `transform: translateX(${
+                -dataIndex * sliderItemWidth
+            }px)`;
+            sliderDotItem.forEach((i) => i.classList.remove("active"));
+            sliderDotItem[dataIndex].classList.add("active");
+        }
+    });
 });
