@@ -20,16 +20,14 @@ window.addEventListener("load", function () {
             if (positionX <= -(sliderItem.length - 1) * sliderItemWidth) return;
             positionX = positionX - sliderItemWidth;
             sliderMain.style = `transform: translateX(${positionX}px)`;
-            console.log("🚀 ~ handleNextImg ~ positionX:", positionX);
             sliderDotItem.forEach((i) => i.classList.remove("active"));
             sliderDotItem[(positionX * -1) / 1000].classList.add("active");
-        }
-        if (direction === -1) {
-            if (positionX <= (sliderItem.length - 1) * sliderItemWidth) return;
+        } else if (direction === -1) {
+            if (positionX >= 0) return;
+            console.log("working");
             positionX = positionX + sliderItemWidth;
             sliderMain.style = `transform: translateX(${positionX}px)`;
             console.log("🚀 ~ handleNextImg ~ positionX:", positionX);
-            sliderDotItem.forEach((i) => i.classList.remove("active"));
             sliderDotItem[(positionX * -1) / 1000].classList.add("active");
         }
     }
