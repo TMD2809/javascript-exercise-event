@@ -89,3 +89,4 @@
 // const count1 = new Item("count1");
 // const count2 = new Item("count2");
 // console.log(Item.count);
+//! super & extend in class
