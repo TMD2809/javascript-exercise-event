@@ -46,14 +46,46 @@
 // };
 // console.log("🚀 ~ TMD.name:", TMD.name);
 //! Class passed in function as argument
-function passClass(aClass) {
-    return new aClass();
-}
-const itABomm = passClass(
-    class {
-        sayHello() {
-            alert("Boooommm!!!");
-        }
-    }
-);
-itABomm.sayHello();
+// function passClass(aClass) {
+//     return new aClass();
+// }
+// const itABomm = passClass(
+//     class {
+//         sayHello() {
+//             alert("Boooommm!!!");
+//         }
+//     }
+// );
+// itABomm.sayHello();
+//! Static method in class
+// class Article {
+//     constructor(title, date) {
+//         this.title = title;
+//         this.date = date;
+//     }
+//     static compare(a, b) {
+//         return a.date - b.date;
+//     }
+// }
+// let articles = [
+//     new Article("HTML", new Date(2023, 5, 1)),
+//     new Article("CSS", new Date(2023, 2, 1)),
+//     new Article("JS", new Date(2023, 3, 1)),
+// ];
+// articles.sort(Article.compare);
+// console.log(articles[0]);
+// console.log(articles[0].title);
+//! static property
+// class Item {
+//     constructor(name) {
+//         this.name = name;
+//         this.constructor.count++; //||this.constructor.propertyName
+//     }
+//     static count = 0;
+//     static getCount() {
+//         return Item.count; //|| className.propertyName
+//     }
+// }
+// const count1 = new Item("count1");
+// const count2 = new Item("count2");
+// console.log(Item.count);
