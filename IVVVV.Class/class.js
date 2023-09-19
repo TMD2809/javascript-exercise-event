@@ -1,19 +1,19 @@
 //! CLASS
-// class Person {
-//     constructor(name) {
-//         this.name = name;
-//     }
-//     getName() {
-//         console.log(this.name);
-//     }
-//     setName(newName) {
-//         this.name = newName;
-//     }
-// }
-// const holmes = new Person("Holmes");
-// holmes.getName();
-// holmes.setName("Doyle");
-// holmes.getName();
+class Person {
+    constructor(name) {
+        this.name = name;
+    }
+    getName() {
+        console.log(this.name);
+    }
+    setName(newName) {
+        this.name = newName;
+    }
+}
+const holmes = new Person("Holmes");
+holmes.getName();
+holmes.setName("Doyle");
+holmes.getName();
 //! GETTER SETTER
 // class Person1 {
 //     constructor(name) {

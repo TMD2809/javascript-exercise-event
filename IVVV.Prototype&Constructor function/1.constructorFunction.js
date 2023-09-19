@@ -16,3 +16,5 @@ function Person(name, age) {
         return currentYear - this.age;
     };
 }
+const Holmes = new Person("Holmes", 39);
+console.log("🚀 ~ Holmes:", Holmes);
