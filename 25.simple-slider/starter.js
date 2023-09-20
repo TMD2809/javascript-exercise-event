@@ -34,6 +34,7 @@ window.addEventListener("load", function () {
         i.addEventListener("click", sliderDot);
         function sliderDot(e) {
             const dataIndex = e.target.dataset.index;
+            console.log("🚀 ~ sliderDot ~ dataIndex:", dataIndex);
             positionX = -dataIndex * sliderItemWidth;
             handleDotClick(-dataIndex * sliderItemWidth, dataIndex);
         }
