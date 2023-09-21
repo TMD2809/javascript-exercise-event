@@ -7,5 +7,5 @@ function sayHello(str1, str2) {
 }
 //! call invoke immediately - no-need to console.log
 sayHello.call(person, "The", "detective");
-//! call invoke immediately - no-need to console.log and params pass in by array
+//! apply invoke immediately - no-need to console.log and params pass in by array
 sayHello.apply(person, ["The", "detective"]);
