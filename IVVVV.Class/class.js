@@ -3,6 +3,7 @@ class Person {
     constructor(name) {
         this.name = name;
     }
+    //* use this instead of prototype
     getName() {
         console.log(this.name);
     }
