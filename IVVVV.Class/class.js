@@ -1,20 +1,20 @@
 //! CLASS
-class Person {
-    constructor(name) {
-        this.name = name;
-    }
-    //* use this instead of prototype
-    getName() {
-        console.log(this.name);
-    }
-    setName(newName) {
-        this.name = newName;
-    }
-}
-const holmes = new Person("Holmes");
-holmes.getName();
-holmes.setName("Doyle");
-holmes.getName();
+// class Person {
+//     constructor(name) {
+//         this.name = name;
+//     }
+//     //* use this instead of prototype
+//     getName() {
+//         console.log(this.name);
+//     }
+//     setName(newName) {
+//         this.name = newName;
+//     }
+// }
+// const holmes = new Person("Holmes");
+// holmes.getName();
+// holmes.setName("Doyle");
+// holmes.getName();
 //! GETTER SETTER
 // class Person1 {
 //     constructor(name) {
@@ -32,8 +32,8 @@ holmes.getName();
 // TMD.name = "Hacker";
 // console.log("🚀 ~ TMD.name:", TMD.name);
 //! CLASS EXPRESSION
-//* Similar to function expression, class has it and not hoisting too
-//const TMD = new Student("TMD"); //* Student was called before declare will cause error:Uncaught ReferenceError: Cannot access 'Student' before initialization
+// * Similar to function expression, class has it and not hoisting too
+// const TMD = new Student("TMD"); //* Student was called before declare will cause error:Uncaught ReferenceError: Cannot access 'Student' before initialization
 // let Student = class {
 //     constructor(name) {
 //         this.name = name;
@@ -45,8 +45,9 @@ holmes.getName();
 //         return (this._name = newName);
 //     }
 // };
+// // const TMD = new Student("TMD");
 // console.log("🚀 ~ TMD.name:", TMD.name);
-//! Class passed in function as argument
+//! Frist class: class passed in function as argument
 // function passClass(aClass) {
 //     return new aClass();
 // }
@@ -73,21 +74,45 @@ holmes.getName();
 //     new Article("CSS", new Date(2023, 2, 1)),
 //     new Article("JS", new Date(2023, 3, 1)),
 // ];
-// articles.sort(Article.compare);
+// console.log(
+//     "🚀 ~ articles.sort(Article.compare):",
+//     articles.sort(Article.compare)
+// );
 // console.log(articles[0]);
 // console.log(articles[0].title);
 //! static property
-// class Item {
-//     constructor(name) {
-//         this.name = name;
-//         this.constructor.count++; //||this.constructor.propertyName
-//     }
-//     static count = 0;
-//     static getCount() {
-//         return Item.count; //|| className.propertyName
-//     }
-// }
-// const count1 = new Item("count1");
-// const count2 = new Item("count2");
-// console.log(Item.count);
+class Item {
+    constructor(name) {
+        this.name = name;
+        this.constructor.count++; //||this.constructor.propertyName
+    }
+    static count = 0;
+    static getCount() {
+        return Item.count; //|| className.propertyName
+    }
+}
+const count1 = new Item("count1");
+const count2 = new Item("count2");
+console.log(Item.count);
 //! super & extend in class
+class Animal {
+    constructor(legs) {
+        this.legs = legs;
+    }
+    walking() {
+        console.log(`walking on ${this.legs} legs`);
+    }
+}
+
+class Bird extends Animal {
+    constructor(legs) {
+        super(legs);
+    }
+    fly() {
+        console.log("I can flying");
+    }
+}
+
+let bird = new Bird(2);
+console.log(bird.fly());
+console.log(bird.walking());
